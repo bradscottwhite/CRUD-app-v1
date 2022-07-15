@@ -4,8 +4,7 @@ export default () => {
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
 
-    const handleClick = e => {
-        e.preventDefault()
+    const addStudent = () => {
         const student = { name, address }
         console.log(student)
         fetch("http://localhost:8085/student/add", {
@@ -13,6 +12,8 @@ export default () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(student)
         }).then(() => {
+            setName('')
+            setAddress('')
             console.log("New student added!")
         })
     }
@@ -31,7 +32,7 @@ export default () => {
                 onChange={e => setAddress(e.target.value)}
             />
             <button
-                onClick={handleClick}
+                onClick={addStudent}
             >Add</button>
         </div>
     )

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default ({ student, id }) => {
+export default ({ students, setStudents, student, id, deleteStudent, index }) => {
     const [editable, setEditable] = useState(false);
     const [name, setName] = useState(student.name);
     const [address, setAddress] = useState(student.address);
@@ -16,13 +16,6 @@ export default ({ student, id }) => {
         })
             .then(() => {
                 console.log(`Student ${id} updated.`)
-            })
-    }
-
-    const deleteStudent = () => {
-        fetch("http://localhost:8085/student/" + id, { method: "DELETE" })
-            .then(() => {
-                console.log(`Student ${id} deleted.`)
             })
     }
 
@@ -52,7 +45,7 @@ export default ({ student, id }) => {
                 <button onClick={() => updateStudent()}>Update</button>
             </td>
             <td>
-                <button onClick={() => deleteStudent()}>Delete</button>
+                <button onClick={() => deleteStudent(id, index)}>Delete</button>
             </td>
         </tr>
     )

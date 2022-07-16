@@ -2,6 +2,8 @@
 ## This is a fullstack CRUD (create, read, update, delete) app using Spring Boot, MySQL, and React.js
 <img width="1440" alt="Picture of app" src="https://user-images.githubusercontent.com/97484878/179337928-b4112ef2-c758-42ab-aa65-40b821e7464e.png">
 
+Note: This app does not contain any styling other than the default boilerplate given by React.
+
 ###### Requirements:
 - Java SDK 18
 - MySQL community server
